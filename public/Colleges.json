@@ -1,0 +1,90 @@
+[
+    {
+      "id": 1,
+      "image": "url_to_image_1.jpg",
+      "name": "University of ABC",
+      "admissionDates": ["2023-08-01", "2023-09-15"],
+      "events": ["Orientation Day", "Homecoming Festival", "Career Fair"],
+      "researchHistory": "Founded in 1920, the University of ABC has a rich history of groundbreaking research.",
+      "sports": ["Basketball", "Soccer", "Swimming"]
+    },
+    {
+      "id": 2,
+      "image": "url_to_image_2.jpg",
+      "name": "XYZ State College",
+      "admissionDates": ["2023-07-20", "2023-09-10"],
+      "events": ["Fall Fest", "Science Expo", "Music Showcase"],
+      "researchHistory": "Established in 1955, XYZ State College is known for its contributions to environmental research.",
+      "sports": ["Football", "Volleyball", "Track and Field"]
+    },
+    {
+        "id": 3,
+        "image": "https://example.com/college1.jpg",
+        "name": "University of Excellence",
+        "admissionDates": "2023-08-15 to 2023-09-30",
+        "events": ["Orientation Day", "Career Fair", "Homecoming"],
+        "researchHistory": "Founded in 1900, known for groundbreaking research in science and technology.",
+        "sports": ["Football", "Basketball", "Soccer"]
+      },
+      {
+        "id": 4,
+        "image": "https://example.com/college2.jpg",
+        "name": "Liberty University",
+        "admissionDates": "2023-09-01 to 2023-10-15",
+        "events": ["Welcome Week", "International Festival", "Spring Fling"],
+        "researchHistory": "Established in 1925, a leader in humanities and social sciences research.",
+        "sports": ["Baseball", "Volleyball", "Swimming"]
+      },
+      {
+        "id": 5,
+        "image": "https://example.com/college10.jpg",
+        "name": "Northern Lights College",
+        "admissionDates": "2023-07-20 to 2023-08-31",
+        "events": ["Freshman Picnic", "Science Fair", "Winter Carnival"],
+        "researchHistory": "Pioneering institution in environmental studies since 1980.",
+        "sports": ["Ice Hockey", "Cross Country", "Track and Field"]
+      },
+      {
+        "id": 6,
+        "name": "University of ABC",
+        "image": "university_of_abc.jpg",
+        "admissionDates": ["2023-09-01", "2023-10-15"],
+        "events": ["Orientation Day", "Career Fair", "Alumni Reunion"],
+        "researchHistory": "Founded in 1960, the University of ABC has a rich history of groundbreaking research in various fields.",
+        "sports": ["Basketball", "Soccer", "Swimming"]
+      },
+      {
+        "id": 7,
+        "name": "XYZ College",
+        "image": "xyz_college.png",
+        "admissionDates": ["2023-08-15", "2023-09-30"],
+        "events": ["Open House", "Science Expo", "Music Festival"],
+        "researchHistory": "XYZ College is known for its contributions to environmental research and sustainable practices.",
+        "sports": ["Football", "Tennis", "Track and Field"]
+      },
+      {
+        "id": 8,
+        "name": "Community College One",
+        "image": "community_college_one.jpg",
+        "admissionDates": ["2023-07-01", "2023-08-31"],
+        "events": ["Student Carnival", "Job Fair", "Art Exhibition"],
+        "researchHistory": "Community College One focuses on providing affordable education and community engagement.",
+        "sports": ["Volleyball", "Baseball", "Softball"]
+      },
+      { "id": 9,
+        "name": "Tech Institute",
+        "image": "tech_institute.jpg",
+        "admissionDates": ["2023-07-01", "2023-08-15"],
+        "events": ["Hackathon", "Tech Expo", "Graduation Ceremony"],
+        "researchHistory": "Tech Institute is known for cutting-edge research in technology and innovation.",
+        "sports": ["Esports", "Robotics Club"]
+      },
+      { "id": 10,
+        "name": "Arts College",
+        "image": "arts_college.jpg",
+        "admissionDates": ["2023-07-15", "2023-09-01"],
+        "events": ["Art Exhibition", "Drama Festival", "Literary Symposium"],
+        "researchHistory": "Arts College celebrates creativity and artistic expression.",
+        "sports": ["Fine Arts Club", "Volleyball"]
+      }
+  ]
