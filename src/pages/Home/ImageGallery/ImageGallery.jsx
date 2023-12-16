@@ -5,21 +5,30 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 const ImageGallery = () => {
-    const [graduates, setGraduates] = useState([])
+    // const [graduates, setGraduates] = useState([])
     const [loading, setLoading] = useState(true)
 
+    const { data: graduates = [],refetch } = useQuery({
+        queryKey: ["graduates"], queryFn: async () => {
+            const res = await axios.get("http://localhost:5000/graduates");
+            console.log(graduates)
+            return res.data;
+        }
+    });
 
-    useEffect(() => {
-        setLoading(true)
-        fetch('http://localhost:5000/graduates')
-            .then(res => res.json())
-            .then(data => setGraduates(data))
-            .catch(error => console.log(error))
-        setLoading(false)
-    }, [])
-    console.log(graduates)
+    // useEffect(() => {
+    //     setLoading(true)
+    //     fetch('http://localhost:5000/graduates')
+    //         .then(res => res.json())
+    //         .then(data => setGraduates(data))
+    //         .catch(error => console.log(error))
+    //     setLoading(false)
+    // }, [])
+    // console.log(graduates)
 
     return (
         <>

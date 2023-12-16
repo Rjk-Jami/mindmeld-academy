@@ -6,7 +6,7 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import CollegeCardDesign from '../../../components/CollegeCardDesign';
 
 const CollegeCard = () => {
-    const [colleges, loading] = UseCollages()
+    const [colleges] = UseCollages()
     console.log(colleges)
 
     return (
