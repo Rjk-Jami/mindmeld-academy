@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { BsPersonCircle  } from 'react-icons/bs';
+import { AuthContext } from '../../../components/hooks/AuthProvider';
 
 const Navbar = () => {
-
+    const { user,  } = useContext(AuthContext)
     const route = <>
         <li><Link to={"/"}>Home</Link></li>
-        <li><Link to={"/"}>Collages</Link></li>
-        <li><Link to={"/"}>Admission</Link></li>
+        <li><Link to={"/colleges"}>Collages</Link></li>
+        <li><Link to={"/admission"}>Admission</Link></li>
         <li><Link to={"/"}>My Collage</Link></li>
     </>
     return (
@@ -30,7 +31,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <BsPersonCircle className='text-2xl'></BsPersonCircle>
+                {
+                        user ? <Link to={"/myProfile/:email"} ></Link> : <Link to="/login">
+                        <BsPersonCircle className='text-2xl'></BsPersonCircle></Link>
+                    }
+                    
                 </div>
             </div>
         </div>
