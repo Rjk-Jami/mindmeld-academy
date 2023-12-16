@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react';
 
 const UseCollages = () => {
  
-  const { data: colleges = [],refetch } = useQuery({
+  const { data: colleges = [],refetch, isLoading } = useQuery({
     queryKey: ["colleges"], queryFn: async () => {
         const res = await axios.get("http://localhost:5000/colleges");
         console.log(colleges)
         return res.data;
     }
 });
-    return [colleges]
+    return [colleges,isLoading]
 };
 
 export default UseCollages;

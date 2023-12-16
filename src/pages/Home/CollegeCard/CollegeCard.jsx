@@ -6,18 +6,23 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import CollegeCardDesign from '../../../components/CollegeCardDesign';
 
 const CollegeCard = () => {
-    const [colleges] = UseCollages()
+    const [colleges,isLoading] = UseCollages()
     console.log(colleges)
 
-    return (
-        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center my-8'>
-            {
-                colleges.slice(0,3).map((college, i) => <CollegeCardDesign college={college} key={i} ></CollegeCardDesign>
-                    )
-            }
+    return (<>
+    {
+        isLoading ? <div className="flex justify-center items-center"><span className=" loading loading-dots loading-lg"></span></div> : <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center my-8'>
+        {
+            colleges.slice(0,3).map((college, i) => <CollegeCardDesign college={college} key={i} ></CollegeCardDesign>
+                )
+        }
 
 
-        </div>
+    </div>  
+
+    }
+    
+    </>
     );
 };
 

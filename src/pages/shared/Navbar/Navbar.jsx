@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><Link to={"/"}>Home</Link></li>
         <li><Link to={"/colleges"}>Collages</Link></li>
         <li><Link to={"/admission"}>Admission</Link></li>
-        <li><Link to={"/"}>My Collage</Link></li>
+        <li><Link to={`/myCollege/${user?.email}`}>My Collage</Link></li>
     </>
     return (
         <div className=' mb-5'>
@@ -32,9 +32,14 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                 {
-                        user ? <Link to={"/myProfile/:email"} ></Link> : <Link to="/login">
+                        user ? <Link to={`/myProfile/${user.email}`} ></Link> : <Link to="/login">
                         <BsPersonCircle className='text-2xl'></BsPersonCircle></Link>
                     }
+                    {user && <><Link to={`/myProfile/${user.email}`}><div className=" flex gap-4 items-center"><div className=""><p className='text-md font-semibold'>{user.displayName}  </p></div><div className="avatar">
+  <div className="w-10 rounded-full">
+    <img src={user.photoURL} />
+  </div>
+</div></div> </Link></>}
                     
                 </div>
             </div>

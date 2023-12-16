@@ -8,6 +8,10 @@ import CollegesDetails from "../pages/CollegesDetails/CollegesDetails";
 import Colleges from "../pages/Colleges/Colleges";
 import SignUp from "../pages/Signup/Signup";
 import Admission from "../pages/Admission/Admission";
+import Login from "../pages/Login/Login";
+import MyProfile from "../pages/MyProfile/MyProfile";
+import PrivateRoutes from "./PrivateRoutes";
+import MyCollege from "../pages/MyCollege/MyCollege";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -33,6 +37,21 @@ const router = createBrowserRouter([
         {
           path:'/signUp',
           element:<SignUp></SignUp>
+        },
+        {
+          path:"/login",
+          element:<Login></Login>
+        },
+        {
+          path:'/myProfile/:email',
+          element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>,
+          loader:({params})=> fetch(`http://localhost:5000/myProfile/${params.email}`)
+        },
+
+        {
+          path:'/myCollege/:email',
+          element:<PrivateRoutes><MyCollege></MyCollege> </PrivateRoutes>,
+          loader:({params})=> fetch(`http://localhost:5000/myCollege/${params.email}`)
         }
       ]
     },

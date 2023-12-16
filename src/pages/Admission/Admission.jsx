@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from "react-select"
 import { useForm, Controller } from "react-hook-form"
 import Colleges from '../Colleges/Colleges';
 import UseCollages from '../../components/hooks/UseCollages';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../components/hooks/AuthProvider';
 
 const Admission = () => {
-    const Colleges = UseCollages()
-    const user = true
+    const [colleges,isLoading] = UseCollages()
+    const {user} = useContext(AuthContext)
     const { control, handleSubmit, reset, watch, register, formState: { errors } } = useForm({
         defaultValues: {
 
@@ -136,7 +137,7 @@ number */}
                                 <label className="label">
                                     <span className="label-text">Image</span>
                                 </label>
-                                <input placeholder="Photo URL" value={user?.displayName} className="input input-bordered" type='name' {...register("image", { required: true })} />
+                                <input placeholder="Photo URL" value={user?.photoURL} className="input input-bordered" type='name' {...register("image", { required: true })} />
                                 {errors.name && <span className='text-red-600'>This field is required</span>}
                             </div>
                         </div>

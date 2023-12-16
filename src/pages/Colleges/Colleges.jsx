@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 
 const Colleges = () => {
-    const [colleges] = UseCollages() 
+    const[colleges,isLoading] = UseCollages() 
     return (
         <div>
             <div className="">

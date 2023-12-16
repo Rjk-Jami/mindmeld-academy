@@ -11,46 +11,51 @@ const SignUp = () => {
     // console.log(location)
     const from = location.state?.from?.pathname || "/";
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-    const { user, createUser, updateUserProfile } = useContext(AuthContext)
+    const { user, loading, login, CreateUser,SignOutUser, loginWithGoogle,setLoading } = useContext(AuthContext)
     const [error, setError] = useState('')  
 
 
-    const onSubmit = data => {
-        console.log(data)
-        createUser(data.email, data.password)
-        .then(result => {
-            const loggedUser = result.user
-            console.log(loggedUser)
+    const onSubmit = (data) => {
+        console.log(data);
 
-            updateUserProfile(data.name, data.photo)
-            .then(res=>{
-                    axios.post('http://localhost:5000/users',{name: data.name, email:data.email, image:data.photo, gender:data.gender,
-                    address:data.address, number:data.phoneNumber })
-                    .then(res=> {
-                        console.log(res.data)
-                        if(res.data.insertedId){
+        CreateUser(data.email, data.password)
+            .then((result) => {
+                const loggedUser = result.user;
+
+                // Moved the `.then` block here
+                axios
+                    .post('http://localhost:5000/users', {
+                        name: data.name,
+                        email: data.email,
+                        image: data.photo,
+                        gender: data.gender,
+                        address: data.address,
+                        number: data.phoneNumber,
+                    })
+                    .then((res) => {
+                        console.log(res.data);
+                        if (res.data.insertedId) {
                             reset();
-                            Swal.fire("Successfully create a account!");
+                            Swal.fire("Successfully created an account!");
                             navigate(from, { replace: true });
                         }
-                      
                     })
-                
+                    .catch((error) => {
+                        console.log(error.message);
+                        setError(error.message);
+                    });
 
-            }
-
-            )
-            .catch(error=>{
-                console.log(error.message)
-                setError(error.message)
+                // Remove unnecessary .then block
             })
-            setError("")
-        })
-        .catch(error => {
-            console.log(error)
-            setError(error.message)
-        }) 
-    }
+            .catch((error) => {
+                console.log(error);
+                setError(error.message);
+            });
+
+        // Moved setError("") to after the asynchronous code
+        setError("");
+    };
+
     const password = watch("password");
     return (
         <div>

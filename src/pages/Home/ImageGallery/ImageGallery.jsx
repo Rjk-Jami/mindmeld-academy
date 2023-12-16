@@ -40,7 +40,7 @@ const ImageGallery = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {graduates.map((graduate, i)=>(<SwiperSlide className=''><img className=' text-center' src={graduate.imageURL} alt="" /></SwiperSlide>))}
+        {graduates.map((graduate, i)=>(<SwiperSlide key={i} className=''><img className=' text-center' src={graduate.imageURL} alt="" /></SwiperSlide>))}
         
       </Swiper>
         </div>
