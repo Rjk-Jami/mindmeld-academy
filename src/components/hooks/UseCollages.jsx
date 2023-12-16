@@ -7,7 +7,7 @@ const UseCollages = () => {
 
   useEffect(()=>{
     setLoading(true)
-     fetch('/Colleges.json')
+     fetch('http://localhost:5000/colleges')
      .then(res=>res.json())
      .then(data => setColleges(data))
      .catch(error=> console.log(error))
