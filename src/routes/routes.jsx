@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         {
           path:"/colleges/:id",
           element: <CollegesDetails></CollegesDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/colleges/${params.id}`)
+          loader: ({params})=> fetch(`https://mindmeld-academy-server.vercel.app/colleges/${params.id}`)
         },
         {
           path:'/admission',
@@ -45,13 +45,13 @@ const router = createBrowserRouter([
         {
           path:'/myProfile/:email',
           element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>,
-          loader:({params})=> fetch(`http://localhost:5000/myProfile/${params.email}`)
+          loader:({params})=> fetch(`https://mindmeld-academy-server.vercel.app/myProfile/${params.email}`)
         },
 
         {
           path:'/myCollege/:email',
           element:<PrivateRoutes><MyCollege></MyCollege> </PrivateRoutes>,
-          loader:({params})=> fetch(`http://localhost:5000/myCollege/${params.email}`)
+          loader:({params})=> fetch(`https://mindmeld-academy-server.vercel.app/myCollege/${params.email}`)
         }
       ]
     },

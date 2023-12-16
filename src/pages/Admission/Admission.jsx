@@ -19,7 +19,7 @@ const Admission = () => {
     const selectedOption = watch('select');
     const selectCollege = (data) => {
 
-            axios.post('http://localhost:5000/admission',{name: data.name, subject:data.Subject, email:data.email, image:data.image, gender:data.gender,
+            axios.post('https://mindmeld-academy-server.vercel.app/admission',{name: data.name, subject:data.Subject, email:data.email, image:data.image, gender:data.gender,
             address:data.address, number:data.number,dateOfBirth:data.dateOfBirth, college:data.select.value })
             .then(res=>{
                 console.log(res.data)

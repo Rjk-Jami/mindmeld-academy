@@ -27,7 +27,7 @@ const Search = () => {
         const searchLetter = searchInputRef.current.value;
         if (searchLetter) {
           try {
-            const response = await axios.get(`http://localhost:5000/getCollegesByAlphabet/${searchLetter}`);
+            const response = await axios.get(`https://mindmeld-academy-server.vercel.app/getCollegesByAlphabet/${searchLetter}`);
             setSearchResults(response.data);
           } catch (error) {
             console.error(error);

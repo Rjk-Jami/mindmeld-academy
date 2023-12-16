@@ -49,7 +49,7 @@ const Login = () => {
         .then(result=> {
             const loggedUser = result.user
             console.log(loggedUser)
-            axios.post('http://localhost:5000/users',{name: loggedUser?.displayName, email:loggedUser?.email, photo:loggedUser?.photoURL})
+            axios.post('https://mindmeld-academy-server.vercel.app/users',{name: loggedUser?.displayName, email:loggedUser?.email, photo:loggedUser?.photoURL})
             .then(res=>{
                 Swal.fire("successfully logged in");
             })

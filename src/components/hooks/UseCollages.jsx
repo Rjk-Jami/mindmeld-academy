@@ -6,7 +6,7 @@ const UseCollages = () => {
  
   const { data: colleges = [],refetch, isLoading } = useQuery({
     queryKey: ["colleges"], queryFn: async () => {
-        const res = await axios.get("http://localhost:5000/colleges");
+        const res = await axios.get(`https://mindmeld-academy-server.vercel.app/colleges`);
         console.log(colleges)
         return res.data;
     }

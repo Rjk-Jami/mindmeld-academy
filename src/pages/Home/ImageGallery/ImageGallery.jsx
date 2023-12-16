@@ -12,7 +12,7 @@ const ImageGallery = () => {
 
     const { data: graduates = [],refetch } = useQuery({
         queryKey: ["graduates"], queryFn: async () => {
-            const res = await axios.get("http://localhost:5000/graduates");
+            const res = await axios.get("https://mindmeld-academy-server.vercel.app/graduates");
             console.log(graduates)
             return res.data;
         }
